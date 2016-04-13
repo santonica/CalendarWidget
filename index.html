@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calendar Test</title>
+    <link href="css/calendar.css" rel="stylesheet"/>
+    <script src="calendar.js"></script>
+</head>
+<body>
+
+    <div id="content" >
+        <div id="calendarDiv">
+            <div id="calheader" class="calheader">
+                <span class="calleft"><< <</span>
+                <span class="calSelection">sdfdsfdsf</span>
+                <span class="calright">> >></span>
+
+            </div>
+            <div id="calcontent" class="calcontent">
+                <!--table>(thead>tr>(th*7))+(tbody>((tr>td*7)*6))-->
+                <table>
+                    <thead id="calHead">
+                    <tr>
+                        <th>S</th>
+                        <th>M</th>
+                        <th>T</th>
+                        <th>W</th>
+                        <th>T</th>
+                        <th>F</th>
+                        <th>S</th>
+                    </tr>
+                    </thead>
+                    <tbody id="calBody">
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <fieldset >
+        <input id="selDate" type="text" placeholder="Enter date">
+        <img id="calButton" src="img/calendar.png" alt="Pick Date"/>
+    </fieldset>
+
+
+    <script>
+
+
+        function openCalendar() {
+            var myCalendar = document.getElementById("calendarDiv");
+            myCalendar.style.display = "block";
+            var dateStr = document.getElementById("selDate").value;
+            var widget = createCalendarWidget();
+            widget.setDateString(dateStr);
+            widget.render();
+        }
+
+        window.onload = function() {
+            var clndr =  document.getElementById("calButton");
+            clndr.addEventListener("click", function(e) {
+                e.preventDefault();
+                openCalendar();
+            });
+        };
+
+
+    </script>
+</body>
+</html>
